@@ -1,0 +1,28 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/navbar.ejs") %>
+<div class="show-order">
+    <div>
+        <p class="order-label"><strong>Id:</strong> <%= store.id %></p>
+    </div>
+    <div>
+        <p class="order-label"><strong>Name:</strong> <%= store.name %></p>
+    </div>
+    <div>
+        <p class="order-label"><strong>Location:</strong> <%= store.location %></p>
+    </div>
+    <div>
+        <p class="order-label"><strong>Email:</strong> <%= store.email %></p>
+    </div>
+    <div class="orders-in-store">
+        <h2>Orders</h2>
+        <ol>
+            <% for(let order of store.orders) {%>
+                <li><a href="/order/<%= order._id %>"><%= order.fullName %></a></li>
+            <%}%>
+        </ol>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="http://localhost:3000/store/<%= store.id %>/order/new">Add Order</a>
+    </div>    
+</div>
+<%- include("partials/footer.ejs") %>

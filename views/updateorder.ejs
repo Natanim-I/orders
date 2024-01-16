@@ -1,0 +1,24 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/navbar.ejs") %>
+<div id="home-container">
+    <form action="http://localhost:3000/order/<%= updateOrder.id %>/edit?_method=PUT" method="POST">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" name="fullName" class="form-control" id="fullName" required value="<%= updateOrder.fullName %>">
+        </div>
+        <div class="form-group">
+            <label for="order">Order</label>
+            <input type="text" name="itemsString" class="form-control" id="order" required value="<%= updateOrder.items %>">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" name="price" class="form-control" id="price" required value="<%= updateOrder.price %>">
+        </div>
+        <div class="form-group">
+            <label for="instruction">Instruction</label>
+            <input type="text" name="instruction" class="form-control" id="instruction" value="<%= updateOrder.instruction %>">
+        </div>
+        <button type="submit" class="btn btn-primary" id="place-order">Update Order</button>
+    </form>
+</div>
+<%- include("partials/footer.ejs") %>

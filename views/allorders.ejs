@@ -1,0 +1,26 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/navbar.ejs") %>
+<div id="home-container">
+
+    <ol id="orders-list">
+        <div class="orders-item">
+            <span class="item">Full Name</span>
+            <span class="item">Order</span>
+            <span class="item">Price</span>
+            <span class="item">Instruction</span>
+            <span class="item">Actions</span>
+        </div>
+    <% for(let order of allorders){%>
+        <li class="orders-item">
+            <span class="item"><%= order.fullName %></span>
+            <span class="item"><%= order.items %></span> 
+            <span class="item"><%= order.price%> </span>
+            <span class="item"><%= order.instruction %></span>
+            <span class="item-actions"><a href="http://localhost:3000/order/<%= order.id %>" class="btn btn-success">Show</a></span>
+            <span class="item-actions"><a href="http://localhost:3000/order/<%= order.id %>/edit" class="btn btn-primary">Update</a></span>
+            <span class="item-actions"><a href="http://localhost:3000/order/<%= order.id %>/delete" class="btn btn-danger">Delete</a></span>
+        </li>
+    <% } %>
+    </ol>
+</div>
+<%- include("partials/footer.ejs") %>

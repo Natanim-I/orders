@@ -1,0 +1,21 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/navbar.ejs") %>
+<div class="show-order">
+    <h1><%= orderFound.store.name %></h1>
+    <div>
+        <p class="order-label"><strong>Id:</strong> <%= orderFound.id %></p>
+    </div>
+    <div>
+        <p class="order-label"><strong>Full Name:</strong> <%= orderFound.fullName %></p>
+    </div>
+    <div>
+        <p class="order-label"><strong>Items:</strong> <%= orderFound.items %></p>
+    </div>
+    <div>
+        <p class="order-label"><strong>Price:</strong> <%= orderFound.price %></p>
+    </div>
+    <div>
+        <p class="order-label"><strong>Instruction:</strong> <%= orderFound.instruction %></p>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>

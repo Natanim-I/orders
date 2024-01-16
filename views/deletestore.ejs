@@ -1,0 +1,24 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/navbar.ejs") %>
+<div id="home-container">
+    <form action="http://localhost:3000/store/<%= deleteStore.id %>/delete?_method=DELETE" method="POST">
+        <div class="form-group">
+            <label for="id">ID</label>
+            <p class="form-control" id="id"><%= deleteStore.id %></p>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" value="<%= deleteStore.name %>" disabled>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" value="<%= deleteStore.location %>" disabled>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" value="<%= deleteStore.email %>" disabled>
+        </div>
+        <button type="submit" class="btn btn-danger" id="place-order">Delete Store</button>
+    </form>
+</div>
+<%- include("partials/footer.ejs") %>
