@@ -1,7 +1,7 @@
 <%- include("partials/head.ejs") %>
 <%- include("partials/navbar.ejs") %>
 <div id="home-container">
-    <form action="http://localhost:3000/store/<%= store.id %>/order" method="post">
+    <form action="/store/<%= store.id %>/order" method="post">
         <h1><%= store.name %></h1>
         <h2>Add new Order</h2>
         <div class="form-group">

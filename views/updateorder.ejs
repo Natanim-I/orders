@@ -1,7 +1,7 @@
 <%- include("partials/head.ejs") %>
 <%- include("partials/navbar.ejs") %>
 <div id="home-container">
-    <form action="http://localhost:3000/order/<%= updateOrder.id %>/edit?_method=PUT" method="POST">
+    <form action="/order/<%= updateOrder.id %>/edit?_method=PUT" method="POST">
         <div class="form-group">
             <label for="fullName">Full Name</label>
             <input type="text" name="fullName" class="form-control" id="fullName" required value="<%= updateOrder.fullName %>">
